@@ -32,7 +32,7 @@ require_once($plugin_path.'framework/rb.php');
 require_once (ABSPATH . "/wp-config.php");
 
 // This integrates the RedBeanPHP ORM 3.2.3 http://redbeanphp.com/
-R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . '', '' . DB_USER . '', '' . DB_PASSWORD . '');
+require_once ($plugin_path.'application/config/database.php');
 
 // Load the framework tick tock tick... Loaded
 $plugin_path = dirname(__FILE__).'/';
