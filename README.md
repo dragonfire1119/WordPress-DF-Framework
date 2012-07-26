@@ -1,7 +1,7 @@
 WordPress-DF-Framework
 ======================
 
-I'm developing this for me but I'm puting it on github for people to use this will be updated and improve and your welcome to help out.
+I'm developing this for me. I'm puting it on github for people to use. This will be updated and improved and your welcome to help out.
 
 Features
 ========
