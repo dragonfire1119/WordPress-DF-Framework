@@ -9,5 +9,7 @@ Intergration with RedBeanPHP 3.2.3 - It's much easier to work with RedBeanPHP th
 
 Pagination helper
 
+Addons - This is in testing and not offically stable yet
+
 More to come...
 ===============
