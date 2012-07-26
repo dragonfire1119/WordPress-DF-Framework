@@ -1,5 +1,6 @@
 WordPress-DF-Framework
 ======================
 
-== Features
-Integrates RedBeanPHP
+Features
+========
+Intergration with RedBeanPHP 3.2.3
