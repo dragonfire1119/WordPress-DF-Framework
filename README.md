@@ -8,3 +8,6 @@ Features
 Intergration with RedBeanPHP 3.2.3 - It's much easier to work with RedBeanPHP then wpdb but your welcome to still use $wpdb
 
 Pagination helper
+
+More to come...
+===============
