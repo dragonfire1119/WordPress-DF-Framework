@@ -8,10 +8,11 @@ class DFPluginFramework {
     var $nonce;
 
     // Assets to load
-    var $admin_css = array();
-    var $admin_js = array();
-    var $plugin_css = array();
-    var $plugin_js = array();
+    var $admin_css = array('your-plugin');
+    var $admin_js = array('your-plugin');
+    var $plugin_css = array('your-plugin');
+    var $plugin_js = array('your-plugin');
+    var $plugin_addons = array('example');
 
     // Paths
     var $css_path = 'css';
@@ -33,8 +34,12 @@ class DFPluginFramework {
             $this->plugin_dir = WP_PLUGIN_DIR.'/'.basename(dirname($here));
         }
         $this->plugin_dir_name = basename(dirname($here));
-        $this->css_path = WP_PLUGIN_URL.'/'.$this->plugin_dir_name.'/css/';
-        $this->js_path = WP_PLUGIN_URL.'/'.$this->plugin_dir_name.'/js/';
+        $this->css_path = WP_PLUGIN_URL.'/'.$this->plugin_dir_name.'/public/css/';
+        $this->js_path = WP_PLUGIN_URL.'/'.$this->plugin_dir_name.'/public/js/';
+        $this->addons_path = $this->plugin_dir_name.'/addons/';
+        foreach($this->plugin_addons as $addons) {
+            require($this->addons_path.'/'.$addons.'/start.php');
+        }
         add_action('wp_loaded', array(&$this, 'create_nonce'));
         if(!empty($this->admin_css) || !empty($this->admin_js) ) {
             add_action('admin_enqueue_scripts', array(&$this, 'load_admin_scripts'));
