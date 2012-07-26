@@ -24,11 +24,6 @@ Author URI: http://www.your-github-account.com/
     a compatible GPL license.
  */
 
-// Load the framework tick tock tick... Loaded
-$plugin_path = dirname(__FILE__).'/';
-if(class_exists('DFPluginFramework') != true)
-    require_once($plugin_path.'framework/DF.php');
-
 // Load some librarys
 require_once($plugin_path.'framework/pagination.php');
 require_once($plugin_path.'framework/rb.php');
@@ -38,3 +33,8 @@ require_once (ABSPATH . "/wp-config.php");
 
 // This integrates the RedBeanPHP ORM 3.2.3 http://redbeanphp.com/
 R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . '', '' . DB_USER . '', '' . DB_PASSWORD . '');
+
+// Load the framework tick tock tick... Loaded
+$plugin_path = dirname(__FILE__).'/';
+if(class_exists('DFPluginFramework') != true)
+    require_once($plugin_path.'framework/DF.php');
