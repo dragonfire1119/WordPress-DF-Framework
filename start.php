@@ -1,13 +1,14 @@
 <?php
+
 /*
 Plugin Name: Your Plugin Name
 Plugin URI: http://www.your-plugin.com
-Description: Your well written plugin description.
+Description: Your well written plugin description...
 Author: Your Name
 Version: 1.0
 Author URI: http://www.your-github-account.com/
 */
- 
+
 /*
     Copyright Your Name/Company, 2012
     My plugins are created for WordPress, an open source software
@@ -24,17 +25,31 @@ Author URI: http://www.your-github-account.com/
     a compatible GPL license.
  */
 
-// Load some librarys
-require_once($plugin_path.'framework/pagination.php');
-require_once($plugin_path.'framework/rb.php');
+// --------------------------------------------------------------
+// Tick... Tock... Tick... Tock...
+// --------------------------------------------------------------
+define( 'DF_START', microtime( true ) );
 
-// Get the wp-config.php to provide the setup for the RedBeanPHP ORM
-require_once (ABSPATH . "/wp-config.php");
+// routes
+require_once 'paths.php';
 
-// This integrates the RedBeanPHP ORM 3.2.3 http://redbeanphp.com/
-require_once ($plugin_path.'application/config/database.php');
+// libraries
+require_once $route['lib_dir'].'pagination.php';
+require_once $route['lib_dir'].'rb.php';
 
-// Load the framework tick tock tick... Loaded
-$plugin_path = dirname(__FILE__).'/';
-if(class_exists('DFPluginFramework') != true)
-    require_once($plugin_path.'framework/DF.php');
+// config
+require_once $route['config_dir'].'application.php';
+require_once $route['config_dir'].'database.php';
+
+// models
+require_once $route['models_dir'].'sample.php';
+
+// controllers
+require_once $route['controllers_dir'].'sample.php';
+
+// WordPress Actions... ETC...
+if ( is_admin() ) {
+    
+} else {
+    
+}
